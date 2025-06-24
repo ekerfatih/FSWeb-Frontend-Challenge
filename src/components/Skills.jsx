@@ -2,20 +2,20 @@
 import Skill from "./Skill.jsx";
 
 function Skills() {
-    const { content } = useGlobalContext();
+    const {content} = useGlobalContext();
     if (!content) return null;
-    const { skills } = content;
+    const {skills} = content;
     return (
         <>
             <section className="Skills">
-                <h1 className="mt-30 mb-8 text-5xl font-bold">{skills.heading}</h1>
-                <div className="flex justify-between">
-                    {skills.skillList.map((skill,index) => (
-                        <Skill key={index} skill={skill} />
+                <h1 className="max-lg:text-center mt-30 mb-8 text-5xl font-bold dark:text-cadblue">{skills.heading}</h1>
+                <div className="max-lg:text-center max-lg:items-center flex justify-between max-lg:flex-col">
+                    {skills.skillList.map((skill, index) => (
+                        <Skill key={index} skill={skill}/>
                     ))}
                 </div>
             </section>
-            <hr className="my-10 text-cornblue"/>
+            <hr className="my-10 dark:text-melrose text-cornblue"/>
         </>
     )
 }

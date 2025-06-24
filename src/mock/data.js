@@ -2,7 +2,7 @@
     en: {
         selection: "en",
         header: {
-            theme: 'DARK MODE',
+            theme: {dark: 'DARK MODE',light: 'LIGHT MODE'},
             language: ['SWITCH TO ', 'TURKISH'],
             navbar: ['Skills', 'Projects', 'Hire me']
         },
@@ -73,13 +73,13 @@
     tr: {
         selection: "tr",
         header: {
-            theme: 'KARANLIK TEMA',
+            theme: {dark: 'KARANLIK TEMA',light: 'AYDINLIK TEMA'},
             language: ["'YE ÇEVİR", "İNGİLİZCE"],
             navbar: ['Yetenekler', 'Projeler', 'Beni işe al']
         },
         about: {
             name: "Almila Su",
-            title: "Yaratıcı düşünür Minimalist aşığı",
+            title: "Yaratıcı düşünür Minimalizm aşığı",
             desc: "Merhaba, ben Almila. Tam yığın geliştiriciyim. Harika kullanıcı deneyimlerine sahip sağlam ve ölçeklenebilir ön uç ürünleri tasarlayacak bir Geliştirici arıyorsanız. Benimle el sıkışalım.",
             buttons: ['İşe Al', {btn: 'GitHub', i: "faGithub"}, {btn: 'Linkedin', i: "faLinkedinIn"}]
         },

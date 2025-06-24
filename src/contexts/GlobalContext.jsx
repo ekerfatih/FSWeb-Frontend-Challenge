@@ -30,6 +30,9 @@ export function GlobalContextProvider({children}) {
         };
         postData();
     }, [language]);
+    useEffect(() => {
+        document.documentElement.classList.toggle("dark", darkMode);
+    }, [darkMode]);
 
     const value = {darkMode, setDarkMode, language, setLanguage, content};
 

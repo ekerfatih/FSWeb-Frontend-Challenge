@@ -9,10 +9,10 @@ import Projects from "./components/Projects.jsx";
 function App() {
 
     return (
-        <>
-            <div className="flex flex-col items-center font-[Inter]">
-                <div className="justify-center flex w-[75%]">
-                    <div className="w-[80%]">
+        <div className="dark:bg-bgclr">
+            <div className="flex flex-col items-center font-[Inter] ">
+                <div className="justify-center flex lg:w-[75%]">
+                    <div className="xl:w-[80%] w-[90%]">
                         <Header/>
                         <AboutMe/>
                         <Skills/>
@@ -22,7 +22,7 @@ function App() {
                 </div>
             </div>
             <Footer/>
-        </>
+        </div>
 
     )
 }

@@ -1,0 +1,61 @@
+﻿import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
+import {useGlobalContext} from "../contexts/GlobalContext.jsx";
+
+function AboutMe() {
+    const {content} = useGlobalContext();
+    if (!content) return null;
+    const {about} = content;
+
+    const iconMap = {
+        faGithub: faGithub,
+        faLinkedinIn: faLinkedinIn,
+    };
+    return (
+        <section className="aboutme flex gap-20">
+            <div className="lg:w-[60%]">
+                <div className="flex items-center max-lg:justify-center justify-left gap-4 my-4">
+                    <hr className="max-lg:hidden  bg-black h-.1 w-[20%] text-cornblue dark:text-melrose"/>
+                    <span
+                        className="text-cornblue max-lg:text-2xl text-[16px] font-medium dark:text-melrose">{about.name}</span>
+                </div>
+                <div>
+                    <h1 className="text-7xl max-lg:text-center font-bold my-10 max-lg:text-5xl text-gray-700 dark:text-cadblue">{about.title}</h1>
+                    <p className="text-[20px] max-lg:text-center text-gray-500 dark:text-white">
+                        {about.desc}
+                    </p>
+                </div>
+                <div className="gap-2 flex mt-12 text-lg max-lg:justify-center">
+
+                    {
+                        about.buttons.map((btn, index) =>
+                            index === 0 ?
+                                (
+                                    <button
+                                        key={index}
+                                        className="dark:bg-titanwhite dark:text-black border cursor-pointer text-white bg-govbay  w-30 h-12 rounded-lg">{btn}
+                                    </button>) :
+                                (
+                                    <button key={index}
+                                            className="dark:bg-mineshaft dark:border-melrose    border cursor-pointer border-govbay w-30 h-12 rounded-lg">
+                                        <FontAwesomeIcon icon={iconMap[btn.i]}
+                                                         className="text-[#3730a3] dark:text-melrose"
+                                        /><span
+                                        className="ml-2 dark:text-melrose text-govbay">{btn.btn}</span>
+                                    </button>
+                                )
+                        )
+                    }
+
+
+                </div>
+            </div>
+            <div className="max-lg:hidden w-[550px] flex justify-end items-center ">
+                <img className="rounded-3xl" src="picture.png" alt=""/>
+            </div>
+        </section>
+
+    )
+}
+
+export default AboutMe;

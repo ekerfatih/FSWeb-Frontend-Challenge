@@ -7,8 +7,8 @@ function Projects() {
     const {projects} = content;
     return (
         <section className="Projects">
-            <h1 className="mb-8 text-5xl font-bold">{projects.heading}</h1>
-            <div className="flex justify-between">
+            <h1 className=" max-lg:text-center mb-8 dark:text-cadblue text-5xl font-bold">{projects.heading}</h1>
+            <div className="flex justify-between max-lg:flex-col ">
 
                 {projects.projectList.map((project, index) => (
                     <Project project={project} key={index}/>
