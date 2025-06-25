@@ -13,7 +13,7 @@ export function GlobalContextProvider({children}) {
 
     const switchLanguage = () => {
         setLanguage(language === "tr" ? "en" : "tr")
-        toast.success(language === 'tr' ? 'Dil türkçe olarak ayarlandı' : 'Language set as english');
+        toast.success(language === 'tr' ? 'Dil türkçe olarak ayarlandı' : 'Language set as english', {autoClose: 1000,});
     }
 
     const switchDarkMode = () => {
@@ -26,7 +26,7 @@ export function GlobalContextProvider({children}) {
                 : language === 'tr'
                     ? "Karanlık mod aktif"
                     : "Dark mode active"
-        ,{theme: darkMode ? "light": "dark"});
+            , {theme: darkMode ? "light" : "dark", autoClose: 1000});
     }
 
     useEffect(() => {
