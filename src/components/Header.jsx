@@ -1,13 +1,13 @@
 ﻿import {useGlobalContext} from "../contexts/GlobalContext.jsx";
 
 function Header() {
-    const {content, language, setLanguage, darkMode, setDarkMode} = useGlobalContext()
+    const {content, switchLanguage, darkMode, switchDarkMode} = useGlobalContext()
     if (!content) return null;
     return (<section className="header mt-4 text-lg">
         <div className="flex lg:justify-end justify-center gap-3">
             {/*<label className="text-sm font-medium text-gray-600 flex">*/}
             {/*    <input*/}
-            {/*        onChange={() => setDarkMode(!darkMode)}*/}
+            {/*        onChange={() => switchDarkMode}*/}
             {/*        className="tglchk mr-2"*/}
             {/*        type="checkBox"*/}
             {/*        checked={darkMode}/>*/}
@@ -18,7 +18,7 @@ function Header() {
                     <input
                         type="checkbox"
                         checked={darkMode}
-                        onChange={() => setDarkMode(!darkMode)}
+                        onChange={() => switchDarkMode()}
                         className="tglchk sr-only"
                     />
                     <div
@@ -47,7 +47,7 @@ function Header() {
             <span className="text-sm font-medium text-gray-600 dark:text-boulder">
                     {content.selection === "en" ? content.header.language[0] : null}
                 <button
-                    onClick={() => setLanguage(language === "tr" ? "en" : "tr")}
+                    onClick={() => switchLanguage()}
                     className="cursor-pointer dark:text-bab text-blue-700 mx-1"
                 >{content.header.language[1]}
   </button>

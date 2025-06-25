@@ -15,7 +15,7 @@ function AboutMe() {
         <section className="aboutme grid lg:grid-cols-2 gap-4 items-center">
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end items-center">
                 <img
-                    className="rounded-3xl max-w-full w-[77%] md:w-[60%] lg:w-[90%]"
+                    className="drop-shadow-2xl rounded-3xl max-w-full w-[77%] md:w-[60%] lg:w-[90%]"
                     src="picture.png"
                     alt=""
                 />
@@ -23,7 +23,7 @@ function AboutMe() {
 
             <div className="order-2 lg:order-1 flex flex-col justify-center">
                 <div className="flex items-center gap-4 my-4 lg:justify-start justify-center">
-                    <hr className="hidden lg:block bg-black h-[1px] w-[20%] text-cornblue dark:text-melrose" />
+                    <hr className="hidden lg:block bg-black h-[1px] w-[20%] text-cornblue dark:text-melrose"/>
                     <span className="text-cornblue text-[16px] max-lg:text-2xl font-medium dark:text-melrose">
         {about.name}
       </span>
@@ -62,7 +62,6 @@ function AboutMe() {
                 </div>
             </div>
         </section>
-
 
 
     )

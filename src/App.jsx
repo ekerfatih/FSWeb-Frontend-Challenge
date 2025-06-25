@@ -5,11 +5,13 @@ import Skills from "./components/Skills.jsx";
 import Profile from "./components/Profile.jsx";
 import Footer from "./components/Footer.jsx";
 import Projects from "./components/Projects.jsx";
+import {ToastContainer} from "react-toastify";
 
 function App() {
 
     return (
         <div className="dark:bg-bgclr">
+            <ToastContainer/>
             <div className="flex flex-col items-center font-[Inter] ">
                 <div className="justify-center flex lg:w-[75%]">
                     <div className="xl:w-[80%] w-[90%]">

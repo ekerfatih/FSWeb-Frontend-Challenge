@@ -2,6 +2,7 @@
 import {useLocalStorage} from "../hooks/useLocalStorage.jsx";
 import {data} from '../mock/data.js'
 import axios from "axios";
+import {toast} from "react-toastify";
 
 export const GlobalContext = createContext();
 
@@ -9,6 +10,24 @@ export function GlobalContextProvider({children}) {
     const [darkMode, setDarkMode] = useLocalStorage("darkMode", false);
     const [language, setLanguage] = useLocalStorage("language", "tr");
     const [content, setContent] = useState(null);
+
+    const switchLanguage = () => {
+        setLanguage(language === "tr" ? "en" : "tr")
+        toast.success(language === 'tr' ? 'Dil türkçe olarak ayarlandı' : 'Language set as english');
+    }
+
+    const switchDarkMode = () => {
+        setDarkMode(!darkMode)
+        toast.success(
+            darkMode
+                ? language === 'tr'
+                    ? "Aydınlık mod aktif"
+                    : "Light mode active"
+                : language === 'tr'
+                    ? "Karanlık mod aktif"
+                    : "Dark mode active"
+        ,{theme: darkMode ? "light": "dark"});
+    }
 
     useEffect(() => {
         const postData = async () => {
@@ -34,7 +53,7 @@ export function GlobalContextProvider({children}) {
         document.documentElement.classList.toggle("dark", darkMode);
     }, [darkMode]);
 
-    const value = {darkMode, setDarkMode, language, setLanguage, content};
+    const value = {darkMode, switchDarkMode, language, switchLanguage, content};
 
     return (
         <GlobalContext.Provider value={value}>
