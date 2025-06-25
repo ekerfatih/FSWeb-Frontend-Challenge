@@ -13,7 +13,7 @@ export function GlobalContextProvider({children}) {
 
     const switchLanguage = () => {
         setLanguage(language === "tr" ? "en" : "tr")
-        toast.success(language === 'tr' ? 'Dil türkçe olarak ayarlandı' : 'Language set as english', {autoClose: 1000,});
+        toast.success(language === 'en' ? 'Dil türkçe olarak ayarlandı' : 'Language set as english', {autoClose: 1000,});
     }
 
     const switchDarkMode = () => {
